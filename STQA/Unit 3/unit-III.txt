@@ -1,0 +1,248 @@
+Which of the following is not a prereq for automation testing?
+A. Stable code and application.
+B. Ready Test Suite.
+C. Skilled and experienced resources.
+D. Ready Test Scripts.
+ANSWER: D
+
+
+Why will you do automation testing?
+A. It improves the efficiency of testing.
+B. It increases defect detection ratio.
+C. It improves the quality of production code.
+D. It reduces the cost of testing.
+ANSWER: A
+
+
+Which of the following is not a Pros of automation testing?
+A. It is useful for testing end-to-end flows.
+B. It can detect high severity or show stopper bugs.
+C. It can help in identifying high priority test cases.
+D. It is very good for validating functional flows.
+ANSWER: C
+
+
+Which of the following is not a drawback of automation testing?
+A. Automated scripts may need rework if the functionality gets reimplemented.
+B. Automated tests may break until the code becomes stable.
+C. Automation testing is suitable for automating the existing functionality.
+D. Automation testing is not feasible for new functionality.
+ANSWER: D
+
+
+Which of the following is not a valid reason for automating a test case?
+A. The test will need to be executed once, but with a large set of data.
+B. The test gives intermittent results and impossible to test manually.
+C. The test is important for the business and typical use case for testing.
+D. The test will help in saving time for doing exploratory testing.
+ANSWER: B
+
+
+What type of test cases should you not automate?
+A. Tests that don't require re-execution.
+B. Tests that take more time to execute.
+C. Tests that fall under the acceptance test criteria.
+D. Tests that require cross-platform testing.
+ANSWER: A
+
+
+Which of the following steps is not mandatory for the automation testing?
+A. The selection of an automation testing tool.
+B. Building a plan for automation testing.
+C. Continuous test execution.
+D. Integration with the CI tool.
+ANSWER: D
+
+
+Which of the following is not a BDD automation framework?
+A. Watir.
+B. RSpec.
+C. Concordion.
+D. Cucumber.
+ANSWER: A
+
+
+Which of the following is the best approach for automation in the long term
+A. Build a team with members having development skills.
+B. Enforce manual testers to start automation.
+C. Train manual testers and start automation.
+D. Associate with the developers to start automation.
+ANSWER: A
+
+
+Which of the following is not a characteristic of the good automation tool
+A. Robust object identification
+B. Good debugging ability
+C. Support of database testing
+D. Easy integration with CI tools
+ANSWER: D
+
+
+Which of the following platforms isn't supported by Jmeter ?
+A. None
+B. WINDOWS
+C. MAC OS X
+D. REACT OS
+ANSWER: D
+
+
+Which is not a valid element of the JMeter test plan?
+A. Annotations
+B. Samplers
+C. Workbench
+D. Listeners
+ANSWER: A
+
+
+What is the correct order of execution of JMeter test plan? A. Configuration elements, B. Timers, C. Pre-Processors, D. Listeners, E. Post-Processors, F. Sampler, G. Assertions
+A. A, C, B, F, E, G, D
+B. A, B, C, D, E, F, G
+C. A, D, C, B, F, E, G
+D. A, G, C, D, E, B, F
+ANSWER: A
+
+
+Which of the following protocols isn't supported by Jmeter ?
+A. SOAP or REST
+B. HTTP or HTTPS
+C. SMTP or POP3
+D. WPA or WPA2
+ANSWER: D
+
+
+Which of the following defines Assertions in JMeter?
+A. Report back test results.
+B. Set the criteria for a test to pass.
+C. Allow simultaneous testing scenarios.
+D. None
+ANSWER: B
+
+
+Which of the following is not a JMeter Sampler?
+A. MongoDB Script
+B. HTTP Request
+C. Monitor Results
+D. Debug Sampler
+ANSWER: C
+
+
+What type of application JMeter doesn't test ?
+A. Web
+B. Database
+C. JAR
+D. Desktop
+ANSWER: D
+
+
+Which of the following controls the time to complete all thread requests?
+A. Number of Threads
+B. Loop Count
+C. Ramp-Up Period
+D. Duration (In Scheduler Config)
+ANSWER: C
+
+
+Which of the following will help JMeter in reducing the Resource Usage?
+A. Use as few Listeners as possible.
+B. Use CSV output instead of XML.
+C. All
+D. Use the same Sampler in a loop.
+ANSWER: C
+
+
+Which of the following Samplers should we use to run the system command?
+A. OS Process Sampler
+B. Test Action Sampler
+C. Java Request Sampler
+D. BeanShell Sampler
+ANSWER: A
+
+
+Which of the following is not a valid Logic Controller for the JMeter?
+A. While Controller
+B. Switch Controller
+C. If Controller
+D. None
+ANSWER: D
+
+
+Which of the following Assertions tests a document for well-formedness?
+A. XPath Assertion
+B. XML Assertion
+C. XML Schema Assertion
+D. None
+ANSWER: A
+
+
+Which of the following Extractors allows the user to extract values from an XML/HTML response?
+A. XPath Extractor
+B. CSS/Jquery Extractor
+C. None
+D. Regular Expression Extractor
+ANSWER: A
+
+
+Which of the configuration elements should we use to read data into variables from a file?
+A. Simple Config Element
+B. Random Variable
+C. Counter
+D. CSV Data Set Config
+ANSWER: D
+
+
+Which of the following Controllers can be used to tell JMeter for running them once per thread?
+A. Loop Controller
+B. Once Only Controller
+C. ForEach Controller
+D. ALL
+ANSWER: D
+
+
+Which of the following annotation causes that method run once after all tests have finished?
+A. @Test
+B. @After
+C. @BeforeClass
+D. @AfterClass
+ANSWER: D
+
+
+Which of the following method of Assert class fails a test with no message?
+A. void assertChecks(boolean pass)
+B. void assertCheck(boolean pass)
+C. void assert(boolean pass)
+D. void fail()
+ANSWER: D
+
+
+Which of the following class is used to run test cases?
+A. JUnitCore
+B. TestCase
+C. TestSuite
+D. TestResult
+ANSWER: A
+
+
+Beta Testing is also known as _________ testing.
+A. Field
+B. Unit
+C. Functional
+D. Box
+ANSWER: A
+
+
+assertThat(0.03, is(closeTo(1.0, 0.03))) is ___________
+A. True
+B. False
+C. NULL
+D. Error
+ANSWER: B
+
+
+_______________ ensures the original fault has been removed.
+A. Regression testing
+B. Re-testing
+C. Negative testing
+D. Positive testing
+ANSWER: B
+
+

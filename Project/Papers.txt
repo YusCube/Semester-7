@@ -1,0 +1,32 @@
+Papers
+
+Sites
+https://dblp.org/search?q=natural%20language%20processing
+https://ieeexplore.ieee.org/
+
+10 Must Read Technical Papers On NLP For 2020
+https://analyticsindiamag.com/10-must-read-technical-papers-on-nlp-for-2020/
+
+
+Feature Extraction and Analysis of Natural
+Language Processing for Deep Learning English
+Language
+https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8999624
+
+
+A Natural Language Process-Based Framework for Automatic Association Word Extraction
+https://ieeexplore.ieee.org/document/8945152
+
+Deep Learning for Natural Language Parsing
+http://ieeexplore.ieee.org/document/8827454
+
+
+Detection of Possible Illicit Messages Using Natural Language Processing and Computer Vision on Twitter and Linked Websites
+https://ieeexplore.ieee.org/document/9016057
+
+
+Formation of SQL from Natural Language Query using NLP
+https://ieeexplore.ieee.org/document/8862080/references#references
+
+
+
