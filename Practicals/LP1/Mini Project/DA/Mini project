@@ -1,0 +1,103 @@
+> mydata <- read.csv("/home/shiva/Documents/BE/LP1/Cancer_Dataset/data.csv")
+> library(caTools)
+> library(e1071)
+> mydata1 <- mydata[,c(1:32)]
+> temp_field<-sample.split(mydata1$diagnosis,SplitRatio=0.7)
+> train<-subset(mydata1, temp_field==TRUE)
+> test<-subset(mydata1, temp_field == FALSE)
+> my_model<-naiveBayes(as.factor(train$diagnosis)~.,train)
+> pred1<-predict(my_model,test[,-2])
+> pred1
+  [1] M M M M M M M M B M M M B B B B B M B B M M B B B M B B B M B M M B B B M B B M M B M B B B B B B B B M M M B M B M B B M M B M B M B B M M
+ [71] M M M M B B B M B M B B B B B M B B B B B B M B B M B B B B M M B M M B B B B B B B M M M B M B B B B M B M M B B B B B B B M B B B B B B M
+[141] B B B M B M B B M B B B M M M B B B B M M B B B M B B B B B B
+Levels: B M
+> table(pred1, test$diagnosis, dnn=c("predicted", "Actual"))
+         Actual
+predicted   B   M
+        B 100   7
+        M   7  57
+> output<-cbind(test, pred1)
+> View(output)
+
+
+
+Using SVM
+
+> dataset <- mydata1
+> dataset$diagnosis = factor(dataset$diagnosis, levels = c("B", "M"))
+
+> set.seed(123)
+> split = sample.split(dataset$diagnosis, SplitRatio = 0.75) 
+> 
+> training_set = subset(dataset, split == TRUE) 
+> test_set = subset(dataset, split == FALSE) 
+> 
+> view(training_set[,-2]) 
+> view(training_set) 
+> view(training_set[-2]) 
+> training_set[-2] = scale(training_set[-2]) 
+> test_set[-2] = scale(test_set[-2])
+> classifier = svm(formula = diagnosis ~ ., 
++                  data = training_set, 
++                  type = 'C-classification', 
++                  kernel = 'linear') 
+> y_pred = predict(classifier, newdata = test_set[-2])
+> cm = table(test_set[, 2], y_pred) 
+> cm
+   y_pred
+     B  M
+  B 87  2
+  M  3 50	
+  
+  
+  > split = sample.split(dataset$diagnosis, SplitRatio = 0.30) 
+>     training_set = subset(dataset, split == TRUE) 
+>     test_set = subset(dataset, split == FALSE) 
+>     classifier = svm(formula = diagnosis ~ .,data = training_set,type = 'C-classification',kernel = 'linear') 
+>     y_pred = predict(classifier, newdata = test_set[-2])
+>     cm = table(test_set[, 2], y_pred) 
+>	cm
+   y_pred
+      B   M
+  B 240  10
+  M   5 143
+  
+  
+> split = sample.split(dataset$diagnosis, SplitRatio = 0.70) 
+>     training_set = subset(dataset, split == TRUE) 
+>     test_set = subset(dataset, split == FALSE) 
+>     classifier = svm(formula = diagnosis ~ .,data = training_set,type = 'C-classification',kernel = 'linear') 
+>     y_pred = predict(classifier, newdata = test_set[-2])
+>     cm = table(test_set[, 2], y_pred, dnn=c("predicted", "Actual"))
+>     cm
+         Actual
+predicted   B   M
+        B 107   0
+        M   3  61
+  
+ 
+
+Results:
+
+Using Navie Bayes
+         Actual
+predicted   B   M
+        B 100   7
+        M   7  57
+        
+
+Using SVM
+         Actual
+predicted   B   M
+        B 107   0
+        M   3  61
+  
+  
+  https://www.geeksforgeeks.org/classifying-data-using-support-vector-machinessvms-in-r/
+  https://www.kaggle.com/gargmanish/basic-machine-learning-with-cancer/data?select=data.csv
+  https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Diagnostic%29
+  
+  Datasets
+  
+  https://www.kaggle.com/nayuts/airport-traffic-visualization/notebook

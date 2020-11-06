@@ -1,0 +1,136 @@
+#Installing the libaries
+install.packages('e1071')
+install.packages('caTools')
+
+
+#Checking that the libraries are successfully installed
+library(caTools)
+library(e1071)
+
+#Importing The Dataset
+mydata <- read.csv("/home/shiva/Documents/BE/LP1/Cancer_Dataset/data.csv")
+
+#Checking the Dataset
+View(mydata)
+
+#Dimensions of the DataSet
+dim(mydata)
+names(mydata)
+
+
+#internal structure
+names(mydata)
+
+Worst Area, Worst Smoothness and Mean Texture
+#Statistics of Major attributes useful for predicting the diagonsis.
+#Min Values
+min(mydata$area_worst)
+min(mydata$smoothness_worst)
+min(mydata$texture_mean)
+
+
+#Max Values
+max(mydata$area_worst)
+max(mydata$smoothness_worst)
+max(mydata$texture_mean)
+
+
+#Range
+range(mydata$area_worst)
+range(mydata$smoothness_worst)
+range(mydata$texture_mean)
+
+
+#Standard Deviation
+sd(mydata$area_worst)
+sd(mydata$smoothness_worst)
+sd(mydata$texture_mean)
+
+
+#Variance
+var(mydata$area_worst)
+var(mydata$smoothness_worst)
+var(mydata$texture_mean)
+
+
+#Percentile
+quantile(mydata$area_worst)
+quantile(mydata$smoothness_worst)
+quantile(mydata$texture_mean)
+
+
+#Data Visualisation
+#Using Worst Area
+plot(mydata$area_worst, main = "Diagonsis using Worst Area of Nuceli", ylab = "Worst Area", col=mydata$diagnosis, xlim = c(1,200))
+
+#Using Worst Smoothness
+plot(mydata$smoothness_worst, main = "Diagonsis using Worst Smoothness of Nuceli", ylab = "Worst Smoothness", col=mydata$diagnosis, xlim = c(1,200))
+
+#Using Mean Texture
+plot(mydata$texture_mean, main = "Diagonsis using Mean Texture of Nuceli", ylab = "Mean Texture", col=mydata$diagnosis, xlim = c(1,200))
+
+
+#Boxplot for Diagnosis using Worst Area
+boxplot(c(mydata$diagnosis), mydata$area_worst)
+
+
+#Using Classification Algorithm to Predict Diagonsis
+#Splitting the Data into Training and Testing Dataset
+temp_field<-sample.split(mydata$diagnosis,SplitRatio=0.6)
+train<-subset(mydata, temp_field==TRUE)
+test<-subset(mydata, temp_field == FALSE)
+
+
+#Using Naive Bayes Algorithm
+my_model<-naiveBayes(as.factor(train$diagnosis)~.,train)
+pred1<-predict(my_model,test[,-2])
+
+#Creating Confusion Matrix 
+ConFusNavB <- table(pred1, test$diagnosis, dnn=c("predicted", "Actual"))
+ConFusNavB
+
+#Combining the Test Data and Predicted Data
+output<-cbind(test, pred1)
+View(output)
+
+
+#Using SVM Algorithm
+split = sample.split(mydata$diagnosis, SplitRatio = 0.60) 
+training_set = subset(mydata, split == TRUE) 
+test_set = subset(mydata, split == FALSE) 
+classifier = svm(formula = diagnosis ~ .,data = training_set,type = 'C-classification',kernel = 'linear') 
+y_pred = predict(classifier, newdata = test_set[-2])
+ConFusSVM = table(test_set[, 2], y_pred, dnn=c("predicted", "Actual"))
+ConFusSVM
+
+
+#Comparing Confusion Matrices
+#Naives Bayes
+#Correct predicitions Using Naive Bayes
+ConFusNavB[1]+ConFusNavB[4]
+
+#Incorrect predicitions Using Naive Bayes
+ConFusNavB[2]+ConFusNavB[3]
+
+#Correct predicitions % Using Naive Bayes
+CPNB = ((ConFusNavB[1]+ConFusNavB[4])/(ConFusNavB[1]+ConFusNavB[2]+ConFusNavB[3]+ConFusNavB[4]))*100
+CPNB
+
+#Incorrect predicitions % Using Naive Bayes
+IPNB = ((ConFusNavB[2]+ConFusNavB[3])/(ConFusNavB[1]+ConFusNavB[2]+ConFusNavB[3]+ConFusNavB[4]))*100
+IPNB
+
+#SVM
+#Correct predicitions Using SVM
+ConFusSVM[1]+ConFusSVM[4]
+
+#Incorrect predicitions Using SVM
+ConFusSVM[2]+ConFusSVM[3]
+
+#Correct predicitions % Using SVM
+CPSVM = ((ConFusSVM[1]+ConFusSVM[4])/(ConFusSVM[1]+ConFusSVM[2]+ConFusSVM[3]+ConFusSVM[4]))*100
+CPSVM
+
+#Incorrect predicitions % Using SVM
+IPSVM = ((ConFusSVM[2]+ConFusSVM[3])/(ConFusSVM[1]+ConFusSVM[2]+ConFusSVM[3]+ConFusSVM[4]))*100
+IPSVM
