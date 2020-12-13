@@ -1,0 +1,90 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": [
+        "Hi",
+        "Hey",
+        "How are you",
+        "Is anyone there?",
+        "Hello",
+        "Good day",
+        "Whats up",
+        "Wassup"
+      ],
+      "responses": [
+        "Hey!!! How may I help? ",
+        "Hi there, what can I do for you?",
+        "Hi there, how can I help?"
+      ]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["Bye", "See you later", "Goodbye"],
+      "responses": [
+        "hanks for chatting. Good Day!!",
+        "Have a nice day!! Bye :D ",
+        "Bye!"
+      ]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!", "Great", "Lovely", "Perfect"],
+      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+    },
+    {
+      "tag": "purpose",
+      "patterns": [
+        "Need a bill",
+        "bill",
+        "invoice",
+        "Make a payment",
+        "Pay my bill",
+        "Is there any due bill?"
+      ],
+      "responses": [
+        "Help me with the mobile number"
+      ]
+    },
+    {
+      "tag": "payments",
+      "patterns": [
+        "Do you take credit cards?",
+        "Do you accept Mastercard?",
+        "Can I pay with Paypal?",
+        "Are you cash only?",
+        "How can I pay?"
+      ],
+      "responses": [
+        "We accept VISA, Mastercard and Paypal",
+        "We accept most major credit cards, and Paypal",
+        "We accept cash as well."
+      ]
+    },
+    {
+      "tag": "billing",
+      "patterns": [
+        "When is the bill due?",
+        "When is the payment due for?",
+        "When was the bill issued?"
+      ],
+      "responses": [
+        "Due in 4 days",
+        "It's due in the next 7 days",
+        "It was 2 weeks back."
+      ]
+    },
+    {
+      "tag": "funny",
+      "patterns": [
+        "Tell me a joke!",
+        "Tell me something funny!",
+        "Do you know a joke?"
+      ],
+      "responses": [
+        "Why did the hipster burn his mouth? He drank the coffee before it was cool.",
+        "What did the buffalo say when his son left for college? Bison."
+      ]
+    }
+  ]
+}
